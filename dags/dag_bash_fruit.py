@@ -12,7 +12,7 @@ with DAG(
     
     t1_orange = BashOperator(
         task_id = "t1_orange",
-        bash_command = "/opt/airflow/plugins/fruit.sh ORANGE",
+        bash_command = "/opt/airflow/plugins/fruit.sh ORANGE",   # bash 명령어 그대로 / 꼭 실행 권한 부여하기!!
     )
 
     t2_avocado = BashOperator(

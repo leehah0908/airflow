@@ -72,6 +72,14 @@ x-airflow-common:
     # The following line can be used to set a custom config file, stored in the local config folder
     # If you want to use it, outcomment it and replace airflow.cfg with the name of your config file
     # AIRFLOW_CONFIG: '/opt/airflow/config/airflow.cfg'
+
+    # email 설정 부분
+    AIRFLOW__SMTP__SMTP_HOST: 'smtp.gmail.com'             # 구글을 사용할거다.
+    AIRFLOW__SMTP__SMTP_USER: 'leehah0908@gmail.com'       # 사용자 계정 (토큰을 받은 계정)
+    AIRFLOW__SMTP__SMTP_PASSWORD: 'isgazftixiqyafpt'       # 구글에서 발급받은 mail 토큰
+    AIRFLOW__SMTP__SMTP_PORT: 587                          # 587 고정
+    AIRFLOW__SMTP__SMTP_MAIL_FROM: 'leehah0908@gmail.com'  # 보내는 사람 계정
+
   volumes:
     - ${AIRFLOW_PROJ_DIR:-.}/dags:/opt/airflow/dags
     - ${AIRFLOW_PROJ_DIR:-.}/logs:/opt/airflow/logs
